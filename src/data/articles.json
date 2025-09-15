@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": "article-1",
+      "image": "https://justbeehoney.co.uk/cdn/shop/articles/Do_you_know_your_bee_species_8a15c99e-4351-4d87-9f97-ef46e4e978ed_2752x.jpg?v=1657034514",
+      "date": "2025-07-24T00:00:00.000Z",
+      "title": "Lifestyle & culture",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id enim erat. Proin malesuada ex id urna blandit, eu dictum turpis consectetur. Aenean sollicitudin, tellus...",
+      "link": "#",
+      "alt": "A bee collecting nectar"
+    },
+    {
+      "id": "article-2",
+      "image": "https://justbeehoney.co.uk/cdn/shop/articles/Do_you_know_your_bee_species_8a15c99e-4351-4d87-9f97-ef46e4e978ed_2752x.jpg?v=1657034514",
+      "date": "2025-07-24T00:00:00.000Z",
+      "title": "Lifestyle & culture",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id enim erat. Proin malesuada ex id urna blandit, eu dictum turpis consectetur. Aenean sollicitudin, tellus...",
+      "link": "#",
+      "alt": "A bee collecting nectar"
+    },
+    {
+      "id": "article-3",
+      "image": "https://justbeehoney.co.uk/cdn/shop/articles/Do_you_know_your_bee_species_8a15c99e-4351-4d87-9f97-ef46e4e978ed_2752x.jpg?v=1657034514",
+      "date": "2025-07-24T00:00:00.000Z",
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id enim erat. Proin malesuada ex id urna blandit, eu dictum turpis consectetur. Aenean sollicitudin, tellus...",
+      "link": "#",
+      "alt": "A bee collecting nectar"
+    },
+    {
+      "id": "article-4",
+      "image": "https://justbeehoney.co.uk/cdn/shop/articles/Do_you_know_your_bee_species_8a15c99e-4351-4d87-9f97-ef46e4e978ed_2752x.jpg?v=1657034514",
+      "date": "2025-07-24T00:00:00.000Z",
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id enim erat. Proin malesuada ex id urna blandit, eu dictum turpis consectetur. Aenean sollicitudin, tellus...",
+      "link": "#",
+      "alt": "A bee collecting nectar"
+    },
+    {
+      "id": "article-5",
+      "image": "https://justbeehoney.co.uk/cdn/shop/articles/Do_you_know_your_bee_species_8a15c99e-4351-4d87-9f97-ef46e4e978ed_2752x.jpg?v=1657034514",
+      "date": "2025-07-24T00:00:00.000Z",
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id enim erat. Proin malesuada ex id urna blandit, eu dictum turpis consectetur. Aenean sollicitudin, tellus...",
+      "link": "#",
+      "alt": "A bee collecting nectar"
+    }
+  ]
+}

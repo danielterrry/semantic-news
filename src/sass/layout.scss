@@ -1,0 +1,186 @@
+@use 'spacing' as s;
+@use 'colors' as c;
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: c.$primary;
+  margin: s.$space-0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 s.$space-4 0 s.$space-4;
+}
+
+.cards {
+  grid-template-areas:
+    'a b c'
+    'a d e';
+  display: grid;
+  grid-gap: s.$space-6;
+  margin: 1rem auto;
+  grid-auto-rows: 1fr;
+}
+
+.card,
+figure {
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    padding: s.$space-6;
+
+    .article-title {
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.article-1 {
+  grid-area: a;
+
+  .thumb-image {
+    height: 100%;
+  }
+
+  .content {
+    margin-top: auto;
+  }
+}
+
+.article-2 {
+  grid-area: b;
+}
+
+.article-3 {
+  grid-area: c;
+}
+
+.article-4 {
+  grid-area: d;
+}
+
+.article-5 {
+  grid-area: e;
+}
+
+#item {
+  display: flex;
+  grid-area: item;
+}
+
+// .thumb-image {
+//   position: absolute;
+//   top: 0;
+// }
+
+.date-posted {
+  display: flex;
+  align-items: center;
+
+  .calendar-icon {
+    margin-right: s.$space-2;
+  }
+}
+
+.overlay,
+.thumb-image img {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #00000021;
+  // background: linear-gradient(0.39turn, #fff0, #00000024, #000);
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: s.$space-6;
+}
+
+.card-background {
+  background-color: #ecf2fb;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    .article-text {
+      & p {
+        font-size: 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .cards {
+    grid-template-areas:
+      'a a'
+      'b c'
+      'd e';
+  }
+}
+
+@media (max-width: 480px) {
+  .pull-top {
+    top: 0;
+  }
+
+  .content {
+    .article-text,
+    .find-out-more {
+      display: none;
+    }
+  }
+
+  .cards {
+    grid-template-areas:
+      'a'
+      'b'
+      'c'
+      'd'
+      'e';
+  }
+}

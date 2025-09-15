@@ -1,0 +1,31 @@
+@use 'spacing' as s;
+@use 'colors' as c;
+
+body {
+  margin: s.$space-0;
+  padding: s.$space-0;
+  font-size: 16px;
+  color: #181a1b;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: #181a1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: s.$space-0;
+  padding: s.$space-0;
+}
