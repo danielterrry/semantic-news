@@ -1,0 +1,149 @@
+@use '../partials/component-base' as base;
+
+.cards {
+  grid-template-areas:
+    'a b c'
+    'a d e';
+  display: grid;
+  grid-gap: base.$s-space-6;
+  margin: 1rem auto;
+  grid-auto-rows: 1fr;
+}
+
+.article-1 {
+  grid-area: a;
+
+  .thumb-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 1rem;
+  }
+
+  .content {
+    margin-top: auto;
+    z-index: 1;
+  }
+}
+
+.article-2 {
+  grid-area: b;
+}
+
+.article-3 {
+  grid-area: c;
+}
+
+.article-4 {
+  grid-area: d;
+}
+
+.article-5 {
+  grid-area: e;
+}
+
+.card,
+figure {
+  position: relative;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #373739;
+  color: base.$c-white;
+  border-radius: 1rem;
+
+  a {
+    color: base.$c-white;
+  }
+
+  .content {
+    padding: base.$s-space-6;
+
+    .article-title {
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.thumb-image {
+  img {
+    border-radius: inherit;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    border-radius: inherit;
+  }
+}
+
+.date-posted {
+  display: flex;
+  align-items: center;
+
+  .calendar-icon {
+    margin-right: base.$s-space-2;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #00000021;
+}
+
+@media (max-width: 768px) {
+  .card {
+    .article-text {
+      & p {
+        font-size: 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .cards {
+    grid-template-areas:
+      'a a'
+      'b c'
+      'd e';
+  }
+}
+
+@media (max-width: 480px) {
+  .pull-top {
+    top: 0;
+  }
+
+  .content {
+    .article-text,
+    .find-out-more {
+      display: none;
+    }
+  }
+
+  .cards {
+    grid-template-areas:
+      'a'
+      'b'
+      'c'
+      'd'
+      'e';
+  }
+}
