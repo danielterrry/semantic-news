@@ -1,10 +1,10 @@
 'use strict';
-import styles from '../sass/components/featured-articles-layout.scss';
-import articles from '../data/articles.json';
-import calendarIcon from '../icons/calendar.svg';
+import styles from './featured-articles-layout.scss';
+import articles from '../../data/articles.json';
+import calendarIcon from '../../icons/calendar.svg';
 
 (function () {
-  class ArticleList extends HTMLElement {
+  class FeaturedArticlesLayout extends HTMLElement {
     articles = [];
     articlesWithNoImage = ['article-3', 'article-4'];
 
@@ -126,5 +126,5 @@ import calendarIcon from '../icons/calendar.svg';
     }
   }
 
-  customElements.define('article-list', ArticleList);
+  customElements.define('featured-articles-layout', FeaturedArticlesLayout);
 })();

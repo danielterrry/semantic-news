@@ -22,7 +22,7 @@ export default {
     scss({
       include: 'src/sass/components/**/*.scss',
       output: false,
-      includePaths: ['src/sass'],
+      include: ['src/**/*.scss'],
     }),
     url({
       include: ['**/*.svg'],

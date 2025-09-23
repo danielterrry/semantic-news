@@ -1,2 +1,2 @@
 import './src/sass/style.scss';
-import './src/js/article-list';
+import './src/components/featured-articles-layout/featured-articles-layout';
