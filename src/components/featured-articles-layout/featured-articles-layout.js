@@ -1,6 +1,5 @@
 'use strict';
 import styles from './featured-articles-layout.scss';
-import articles from '../../data/articles.json';
 import calendarIcon from '../../icons/calendar.svg';
 
 (function () {
@@ -11,8 +10,47 @@ import calendarIcon from '../../icons/calendar.svg';
     constructor() {
       super();
       this.attachShadow({ mode: 'open' });
-      this.articles = articles.data;
+    }
 
+    async connectedCallback() {
+      this.articles = await this.getNews();
+      this.displayArticles();
+      this.setupHoverEvents();
+    }
+
+    async getNews() {
+      try {
+        const response = await fetch('http://localhost:3000/news');
+        if (response.status !== 200) throw new Error('Failed to fetch news.');
+        const { data } = await response.json();
+
+        return data;
+      } catch (error) {
+        console.error('ERROR:', error);
+      }
+    }
+
+    setupHoverEvents() {
+      this.articles.forEach((article, i) => {
+        const isPopular = (i + 1) % 2 === 0;
+
+        if (isPopular) {
+          const articleElement = this.shadowRoot.querySelector(
+            `.${article.id}`,
+          );
+
+          if (articleElement) {
+            this.handleHover(articleElement);
+          } else {
+            console.log(
+              `Article element with class name ${className} was not found.`,
+            );
+          }
+        }
+      });
+    }
+
+    displayArticles() {
       const container = document.createElement('div');
       container.classList.add('cards');
       container.id = 'cards';
@@ -66,32 +104,6 @@ import calendarIcon from '../../icons/calendar.svg';
       this.shadowRoot.appendChild(style);
 
       this.shadowRoot.append(container);
-      console.log('styles: ', styles);
-    }
-
-    connectedCallback() {
-      this.setupHoverEvents();
-    }
-
-    setupHoverEvents() {
-      this.articles.forEach((article, i) => {
-        const isPopular = (i + 1) % 2 === 0;
-        console.log(article.id);
-
-        if (isPopular) {
-          const articleElement = this.shadowRoot.querySelector(
-            `.${article.id}`,
-          );
-
-          if (articleElement) {
-            this.handleHover(articleElement);
-          } else {
-            console.log(
-              `Article element with class name ${className} was not found.`,
-            );
-          }
-        }
-      });
     }
 
     handleHover(element) {
