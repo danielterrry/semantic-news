@@ -20,7 +20,7 @@ import calendarIcon from '../../icons/calendar.svg';
 
     async getNews() {
       try {
-        const response = await fetch('http://localhost:3000/news');
+        const response = await fetch(`${process.env.API_BASE_URL}/news`);
         if (response.status !== 200) throw new Error('Failed to fetch news.');
         const { data } = await response.json();
 

@@ -2,6 +2,10 @@ import json from '@rollup/plugin-json';
 import scss from 'rollup-plugin-scss';
 import terser from '@rollup/plugin-terser';
 import url from '@rollup/plugin-url';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default {
   input: 'index.js',
@@ -28,5 +32,11 @@ export default {
       include: ['**/*.svg'],
     }),
     terser(),
+    replace({
+      preventAssignment: true,
+      'process.env.API_BASE_URL': JSON.stringify(
+        process.env.API_BASE_URL || '',
+      ),
+    }),
   ],
 };
