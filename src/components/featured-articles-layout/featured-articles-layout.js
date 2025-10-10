@@ -5,7 +5,6 @@ import calendarIcon from '../../icons/calendar.svg';
 (function () {
   class FeaturedArticlesLayout extends HTMLElement {
     articles = [];
-    articlesWithNoImage = ['article-3', 'article-4'];
 
     constructor() {
       super();
@@ -56,17 +55,17 @@ import calendarIcon from '../../icons/calendar.svg';
       container.id = 'cards';
 
       const articlesHTML = this.articles
-        .map((article) => {
-          const plain = this.articlesWithNoImage.includes(article.id);
+        .map((article, index) => {
+          const className = `article-${index + 1}`;
           const postedOn = new Date(article.date).toLocaleDateString('en-GB', {
             day: 'numeric',
             month: 'long',
           });
 
           return `
-      <article class="card ${article.id}">
+      <article class="card ${className}">
         ${
-          !plain
+          ![2, 3].includes(index)
             ? `
               <figure class="thumb-image">
                 <img src="${article.image}" alt="${article.alt}" />
