@@ -30,20 +30,17 @@ import calendarIcon from '../../icons/calendar.svg';
     }
 
     setupHoverEvents() {
-      this.articles.forEach((article, i) => {
-        const isPopular = (i + 1) % 2 === 0;
+      this.articles.forEach((_, index) => {
+        const isPopular = (index + 1) % 2 === 0;
 
         if (isPopular) {
-          const articleElement = this.shadowRoot.querySelector(
-            `.${article.id}`,
-          );
+          const articleElement =
+            this.shadowRoot.querySelectorAll('.card')[index];
 
           if (articleElement) {
             this.handleHover(articleElement);
           } else {
-            console.log(
-              `Article element with class name ${className} was not found.`,
-            );
+            console.log(`Article card at ${index} was not found.`);
           }
         }
       });
